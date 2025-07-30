@@ -13,7 +13,7 @@ class Pens {
         System.out.println("Color: " + this.color);
     }
 
-    public float printPrice(float Price) {
+    public float printPrice(float price) {
         // System.out.println("Color: " + this.price); // normal way
         System.out.printf("Price: %.2f\n", this.price);  // for 2 digit after decimal point
         return price;
