@@ -15,7 +15,7 @@ class Pens {
 
     public float printPrice(float price) {
         // System.out.println("Color: " + this.price); // normal way
-        System.out.printf("Price: %.2f\n", this.price);  // for 2 digit after decimal point
+        System.out.printf("Price: %.2f\n", price);  // for 2 digit after decimal point
         return price;
     }
 }
