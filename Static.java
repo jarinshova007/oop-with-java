@@ -1,5 +1,5 @@
-/* if there is a non-satic method on the top level (outside the Main(in case Static) method and a static method of
-same name inside the Static method then it will be possinle to run the code. Otherwise not */
+/* if there is a non-satic class on the top level (outside the Main(in case Static) method) and a static class of
+same name inside the Static method then it will be possible to run the code. Otherwise not */
 
 // it is not possible to overload or override a class
 
