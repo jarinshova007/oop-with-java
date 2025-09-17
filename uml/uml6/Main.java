@@ -21,7 +21,7 @@ public class Main {
 
         Employee e1 = new Employee(1, "Alexy");
         Employee e2 = new Employee(2, "Sonia");
-        Employee e3 = new Employee(3, "Sympkin");
+        Employee e3 = new Employee(3, "Sympkin"); // remove
         Employee e4 = new Employee(4, "Tartiana");
         
         // add project
