@@ -2,37 +2,33 @@ package uml8;
 import java.util.List;
 import java.util.ArrayList;
 
-class Customer {
-    private int id;
-    private String name;
-    private String email;
-    private List<Order> orders;
+public class Customer extends User{
+    private List<Cart> cart;
 
-    void setCustomerInfo(int id, String name, String email) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
+    Customer(int userId, String name, String email) {
+        super(userId, name, email);
+        this.cart = new ArrayList<>();
+    }
 
-        if (this.orders == null) {
-            this.orders = new ArrayList<>();
+    // add cart
+    public void addCart(Cart c) {
+        cart.add(c);
+    }
+
+    // display Customer
+    public void displayCustomer() {
+        super.login();
+        System.out.println("--- Customer Details ---");
+        System.out.println("Customer Id: " + getUserId());
+        System.out.println("Name : " + getUserName());
+        System.out.println("Email: " + getEmail());
+        System.out.println("-----------------");
+        System.out.println("--- cart ---");
+        for (Cart c : cart) {
+            c.displayCart();
         }
-    }
-    void addOrder(Order order) {
-        orders.add(order);
-    }
-
-    void removeOrder(Order order) {
-        orders.remove(order);
-    }
-
-    void displayCustomerInfo() {
-        System.out.println("Customer ID: " + id);
-        System.out.println("Customer Name: " + name);
-        System.out.println("Email: " + email);
-        System.out.println("------------------------");
-        for (Order o : orders) {
-            o.displayOrder();
-            System.out.println("------------------------");
-        }
+        super.logout();
+        System.out.println("-----------------");
+        System.out.println("-----------------");
     }
 }

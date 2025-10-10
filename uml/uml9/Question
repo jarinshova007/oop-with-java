@@ -1,0 +1,34 @@
+// Library Management System UML
+        +------------------+
+        |   Library        |
+        +------------------+
+        | - books: List<Book> |
+        | - members: List<Member> |
+        +------------------+
+        | +addBook()       |
+        | +removeBook()    |
+        | +registerMember()|
+        +------------------+
+                  |
+                  | aggregates
+                  v
+        +------------------+
+        |      Book        |
+        +------------------+
+        | - bookId         |
+        | - title          |
+        | - author         |
+        +------------------+
+        | +getDetails()    |
+        +------------------+
+                  ^
+                  |
+        +------------------+
+        |   Member         |
+        +------------------+
+        | - memberId       |
+        | - name           |
+        +------------------+
+        | +borrowBook()    |
+        | +returnBook()    |
+        +------------------+

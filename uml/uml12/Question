@@ -1,0 +1,35 @@
+ // Student Grading System UML
+          +-------------------+
+          |      Person       |
+          +-------------------+
+          | - id: int         |
+          | - name: String    |
+          | - email: String   |
+          +-------------------+
+          | +getDetails()     |
+          +-------------------+
+                    ^
+                    |
+       +------------+------------+
+       |                         |
++-------------------+    +--------------------+
+| Student           |    | Teacher            |
++-------------------+    +--------------------+
+| - courses: List<Course>| | - subjects: List<Subject> |
++-------------------+    +--------------------+
+| +calculateGPA()   |    | +assignGrade(Student, Subject) |
++-------------------+    +--------------------+
+
+        Aggregation
++--------------------+
+|      Course        |
++--------------------+
+| - courseId: int    |
+| - name: String     |
+| - credits: int     |
+| - grades: Map<Student, Double> |
++--------------------+
+| +addGrade(Student, double) |
+| +calculateAverage()       |
++--------------------+
+

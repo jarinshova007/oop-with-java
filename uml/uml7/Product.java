@@ -1,4 +1,4 @@
-package uml8;
+package uml7;
 
 public class Product {
     private int prodId;

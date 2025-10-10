@@ -1,78 +1,37 @@
 package uml8;
-/*
-+----------------+          +----------------+        +----------------+
-|   Customer     |<>--------|    Order       |<>------|   Product      |
-+----------------+          +----------------+        +----------------+
-| - id:int       |          | - orderId:int  |        | - prodId:int   |
-| - name:String  |          | - date:String  |        | - name:String  |
-| - email:String |          | - products:List|        | - price:double |
-+----------------+          | - total:double |        +----------------+
-                            +----------------+
-                                |
-                                |<>------ +----------------+
-                                |         |   Payment      |
-                                |         +----------------+
-                                |         | - payId:int    |
-                                |         | - method:String|
-                                |         | - amount:double|
-                                +---------+----------------+
- */
-
 public class Main {
     public static void main(String[] args) {
-        Product p1 = new Product();
-        p1.setProduct(01, "Laptop", 250000.00);
+        // items
+        Item item1 = new Item(101, "Laptop", 120000.00);
+        Item item2 = new Item(102, "Keyboard", 3000.00);
+        Item item3 = new Item(103, "Mouse", 650.00);
+        Item item4 = new Item(104, "Television", 45000.00);
+        Item item5 = new Item(105, "Mini Table", 2600.00);
 
-        Product p2 = new Product();
-        p2.setProduct(02, "LCD Screen Cleaning Kit", 180.00);
+        // add item
+        Cart cart1 = new Cart();
+        cart1.addItem(item1);
+        cart1.addItem(item2);
+        cart1.addItem(item3);
 
-        Product p3 = new Product();
-        p3.setProduct(03, "Mouse", 400.00);
+        Cart cart2 = new Cart();
+        cart2.addItem(item4);
+        cart2.addItem(item5);
 
-        Product p4 = new Product();
-        p4.setProduct(04, "Keyboard", 2000.00);
+        // remove item
+        cart1.removeItem(item3);
 
-        Product p5 = new Product();
-        p5.setProduct(05, "Mini Table", 1800.00);
-
-        Order ord1 = new Order();
-        ord1.setOrder(1, "17 - 09 - 2025");
-        Order ord2 = new Order();
-        ord2.setOrder(2, "18 - 09 - 2025");
-        Order ord3 = new Order();
-        ord3.setOrder(3, "19 - 09 - 2025");
-
-        // add product
-        ord1.addProduct(p1);
-        ord1.addProduct(p2);
-        ord2.addProduct(p3);
-        ord2.addProduct(p4);
-        ord3.addProduct(p5);
+        // Customers
+        Customer c1 = new Customer(1001, "Jarin", "jarinshova007@gmail.com");
+        c1.addCart(cart1);
+        c1.displayCustomer();
         
-        Payment pay1 = new Payment();
-        pay1.setPayment(101, "Rocket");
-        Payment pay2 = new Payment();
-        pay2.setPayment(102, "Nagad");
-        Payment pay3 = new Payment();
-        pay3.setPayment(103, "Cash");
+        Customer c2 = new Customer(1002, "Shova", "jarinshova007@gmail.com");
+        c2.addCart(cart2);
+        c2.displayCustomer();
 
-        ord1.addPayment(pay1);
-        ord2.addPayment(pay2);
-        ord3.addPayment(pay3);
-        
-        System.out.println("Customer Details:");
-        System.out.println();
-        Customer c1 = new Customer();
-        c1.setCustomerInfo(01, "Jarin", "jarinshova1234@gmail.com");
-        c1.addOrder(ord1);
-        c1.displayCustomerInfo();
-        Customer c2 = new Customer();
-        c2.setCustomerInfo(02, "Natasha", "natasha5678@gmail.com");
-        c2.addOrder(ord2);
-        c2.displayCustomerInfo();
-        Customer c3 = new Customer();
-        c3.setCustomerInfo(03, "Alexy", "alexy91011@gmail.com");
-        c3.addOrder(ord3);
-        c3.displayCustomerInfo();
+        // Admin
+        Admin a1 = new Admin(33, "Tanisha", "tanisha1234@gmain.com");
+        a1.displayAdmin();
     }
 }

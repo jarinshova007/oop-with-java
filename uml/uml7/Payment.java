@@ -1,4 +1,4 @@
-package uml8;
+package uml7;
 
 public class Payment {
     private int payId;
