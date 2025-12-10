@@ -1,70 +1,29 @@
-/* if there is a non-satic class on the top level (outside the Main(in case Static) method) and a static class of
-same name inside the Static method then it will be possible to run the code. Otherwise not */
-
-// it is not possible to overload or override a class
-
-// 1st class                       
-class Animal1 {
-    void sound() {
-        System.out.println("Woof Woof 1");
-    }
-
-    // 1st sub class
-    class Animal {
-    void sound() {
-            System.out.println("SubWoof SubWoof 1");
-        }
-    }
-}
+// This class is to demonstrate the structure of a Java class with static members
 public class Static {
-    // 2nd class 
-    class Animal2 {
-    void sound() {
-            System.out.println("Woof Woof 2");
+        static int staticValue; // static variable
+        int value; // instance variable
+
+        // static setter for staticValue (static method)
+        static void setStaticValue(int staticValue) { 
+            Static.staticValue = staticValue;
         }
-    }
-    // 3rd class
-    class Animal3 {
-    void sound() {
-            System.out.println("Woof Woof 3");
+
+        // setter for value (non-static method)
+        void setValue(int value) {
+            this.value = value;
         }
-    }     
-    // static class
-    static class Animal {
-        void sound() {
-            System.out.println("StaticWoof StaticWoof");
-        }
-    }
     public static void main(String[] args) {
-        // 1st class
-        Animal1 a = new Animal1();
-        a.sound();
+        System.out.println(staticValue);
 
-        // 1st sub class
-        Animal1.Animal b = a.new Animal();
-        b.sound();
+        // static method call without class object
+        Static.setStaticValue(100);
         
-        // 2nd class
-        Static m = new Static();
-        Static.Animal2 c = m.new Animal2();
-        c.sound();
+        // non-static method call with class object
+        Static s = new Static();
+        s.setValue(50);
 
-        // 3rd class
-        Static.Animal3 d = m.new Animal3();
-        d.sound();
-
-        // static class
-        Static.Animal e = new Animal();
-        e.sound();
-
-        // non static class
-        Animal f = new Animal(); 
-        f.sound(); // it won't work. It will call the sound method from the static Animal class
+        // print
+        System.out.println("staticValue: " + Static.staticValue);
+        System.out.println("value: " + s.value);
     }
 }
-// non static class (is case a useless class)
-    class Animal {
-        void sound() {
-            System.out.println("Non-StaticWoof Non-StaticWoof");
-        }
-    }

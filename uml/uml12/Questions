@@ -1,0 +1,18 @@
+Write a Java program following these instructions:
+
+Create an abstract class named Shape that declares an abstract method double
+calculateArea()
+
+Create two subclasses: Rectangle and Circle. Both should extend the Super class
+
+In the Rectanglerclass, add two attributes: length and width. Provide a constructor to initialize them, and implement the calculateArea() method to return the area of the rectangle.
+
+In the Circle class, add one attribute radius. Provide a constructor to initialize it, and implement the calculateArea() method to return the area of the circle.
+
+In the main method, prompt the user to choose a shape (1 for rectangle, 2 for circle).
+
+Based on the choice, ask the user to enter the necessary dimensions (length and width for rectangle, radius for circle).
+
+Create an instance of the appropriate class and call its calculateArea() method.
+
+Print the calculated area.

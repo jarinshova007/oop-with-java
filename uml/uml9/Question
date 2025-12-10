@@ -2,12 +2,14 @@
         +------------------+
         |   Library        |
         +------------------+
+        | - name           |
         | - books: List<Book> |
         | - members: List<Member> |
         +------------------+
         | +addBook()       |
         | +removeBook()    |
         | +registerMember()|
+        | +displayLibrary()|
         +------------------+
                   |
                   | aggregates
